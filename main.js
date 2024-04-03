@@ -1,0 +1,1 @@
+const enterButton = document.getElementById("enterw")

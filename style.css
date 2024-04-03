@@ -1,6 +1,8 @@
 body, html {
     height: 100%;
     margin: 0;
+    background-color: rgba(0, 0, 0, 0.74);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body {
@@ -11,9 +13,26 @@ body {
 
 .header {
     text-align: center;
+    color: rgba(255, 255, 255, 0.651);
+    background-color: rgba(151, 151, 151, 0.288);
+    border-radius: 15px;
+    width: 250px;
+    height: auto;
+    padding: 20px;
 }
 
 .header h1 {
     margin: 0;
     padding: 0;
+}
+.header button{
+    width: 100px;
+    height: 20px;
+    border-color: transparent;
+    border-radius: 5px;
+    transition: transform .3s ease-in-out;
+}
+
+.header button:hover{
+    transform: scale(1.1)
 }
