@@ -36,3 +36,31 @@ body {
 .header button:hover{
     transform: scale(1.1)
 }
+
+.bot button{
+    width: 100px;
+    height: 20px;
+    border-color: transparent;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: transform .3s ease-in-out;
+}
+
+.bot button:hover{
+    transform: scale(1.1)
+}
+#addPass{
+    width: fit-content;
+}
+.enterInfo {
+    display: grid;
+    grid-template-rows: auto;
+    color: white;
+    font-size: 12px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.bot {
+    margin-bottom: 10px; /* Add margin to separate the bot div from the enterInfo div */
+}
