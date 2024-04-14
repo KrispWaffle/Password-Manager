@@ -45,15 +45,14 @@ async function storeEncryptedData() {
 
     const encrypted = await encryptData(JSON.stringify({ website, username, password }));
 
-    // For demonstration, log the encrypted data
     console.log("Encrypted data:", encrypted);
 
-    // Decrypt the encrypted data
+
     decryptedData = await decryptData(encrypted.encryptedData, encrypted.iv, encrypted.key);
 
     console.log("Decrypted data:", decryptedData);
 
-    // Access a specific value from the decrypted data
+
     console.log("Website:", decryptedData.website);
 
     return decryptedData.password;
@@ -62,11 +61,3 @@ async function storeEncryptedData() {
 document.getElementById("submit").addEventListener("click", storeEncryptedData);
 
 
-const body = document.body;
-
-const testP  = document.createElement('p')
-
-testP.textContent = storeEncryptedData()
-
-
-body.appendChild(testP);
