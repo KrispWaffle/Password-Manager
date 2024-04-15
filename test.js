@@ -1,4 +1,14 @@
-let decryptedData; // Variable to store the decrypted data
+let decryptedData; 
+const website = document.getElementById("webInput").value;
+const username = document.getElementById("userInput").value;
+const password = document.getElementById("passInput").value;
+
+var enterInfo = document.getElementById('enterInfo')
+var addInfo = document.getElementById('addPass')
+enterInfo.style.display = 'none'
+
+addInfo.addEventListener('click', handler);
+
 
 async function encryptData(data) {
     const encoder = new TextEncoder();
@@ -39,9 +49,7 @@ async function decryptData(encryptedData, iv, key) {
 }
 
 async function storeEncryptedData() {
-    const website = document.getElementById("webInput").value;
-    const username = document.getElementById("userInput").value;
-    const password = document.getElementById("passInput").value;
+  
 
     const encrypted = await encryptData(JSON.stringify({ website, username, password }));
 
@@ -54,10 +62,38 @@ async function storeEncryptedData() {
 
 
     console.log("Website:", decryptedData.website);
-
-    return decryptedData.password;
+    
+   
 }
 
-document.getElementById("submit").addEventListener("click", storeEncryptedData);
+ function handler(){
+    //const data =  storeEncryptedData();
+    addInfo.style.display = 'none'
+    enterInfo.style.display = 'grid'
+    console.log('show')
+}
+document.getElementById("submit").addEventListener("click", () => {
+ 
+   
+ 
+        storeEncryptedData().then(() => {
+            console.log(username)
+            if(!website || !username || !password){
+                console.log("fill in form")
+                //alert('fill out the form ');
+                //event.preventDefault()
+            }else{
+                addInfo.style.display = 'flex';
+               // enterInfo.style.display = 'none'
+                console.log('reshowed');
+            }
+            
+        });
+    
+   
+});
 
-
+document.getElementById('cancel').addEventListener('click', ()=>{
+    addInfo.style.display = 'flex';
+    enterInfo.style.display = 'none'
+})
