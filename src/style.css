@@ -64,4 +64,6 @@ body {
 
 .bot {
     margin-bottom: 10px; /* Add margin to separate the bot div from the enterInfo div */
+    justify-content: center;
+    margin-left: 35px;
 }
