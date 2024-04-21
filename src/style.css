@@ -67,3 +67,7 @@ body {
     justify-content: center;
     margin-left: 35px;
 }
+#middle {
+    
+    overflow-y: auto; /* Enable vertical scrolling */
+}
